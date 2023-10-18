@@ -125,7 +125,6 @@ a:visited {
   font-size: 37px;
 }
 
-
 .field,
 .form-btn-container,
 .field_with_errors {
@@ -191,7 +190,6 @@ a:visited {
   margin-bottom: 85px;
 }
 
-
 .categories-ul li p {
   padding-left: 10px;
   padding-right: 10px;
@@ -242,7 +240,7 @@ a:visited {
 
 .add-new,
 .add-new-a {
-  background-color: #5fb523;
+  background-color: var(--second-color);
 }
 
 .add-new-a {

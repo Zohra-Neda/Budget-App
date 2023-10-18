@@ -7,5 +7,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         validates :name, presence: true, length: { maximum: 30, too_long: '%<count>s charecters is the maximum allowed' }
+  validates :name, presence: true,
+                   length: { maximum: 30, too_long: '%<count>s charecters is the maximum allowed' }
 end
