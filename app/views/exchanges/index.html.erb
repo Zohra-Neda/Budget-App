@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="nav-container">
+    <a class="back-btn-a" href="<%= categories_path %>">
+      <h3 class="h3">back</h3>
+    </a>
+    <%= button_to destroy_user_session_path, method: :delete, class: "log-out-a", data: { turbo: false } do %>
+      <h3 class="h3">logout</h3>
+    <% end %>
+  </div>
+  <h1>Transactions</h1>
+</div>
+
+<div class = "img-amount-container">
+  <div class="trans-total-container">
+    <div class = "img-container">
+      <img class = "category-image" src= "<%= @category.icon %>" alt="<%= @category.name %>_image">
+    </div>
+    <p class="trans-name"><%= @category.name %></p>
+  </div>
+  <p class= "trans-amount">$<%= @category.total_amount %></p>
+</div>
+
+<ul id="transactions" class = "categories-ul">
+  <% @transactions.each do |transaction| %>
+    <li>
+      <p class = ""><%= transaction.name %></p>
+      <p class = "">$<%= transaction.amount %></p>
+    </li>  
+  <% end %>
+</ul>
+
+<a class = "add-new-a" href="<%= new_category_exchange_path(@category) %>">
+  <button class='add-new'>Add a new Transaction</button>
+</a>
