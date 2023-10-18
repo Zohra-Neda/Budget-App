@@ -1,7 +1,7 @@
 <div class="header">
   <div class="nav-container">
     <a class="back-btn-a" href="<%= categories_path %>">
-      <h3 class="h3">back</h3>
+      <img class="back-btn"  src="<%= asset_path('arrow_back.ico') %>" alt="Back" id="back-img">
     </a>
     <%= button_to destroy_user_session_path, method: :delete, class: "log-out-a", data: { turbo: false } do %>
       <h3 class="h3">logout</h3>
