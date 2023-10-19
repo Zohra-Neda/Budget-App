@@ -1,0 +1,27 @@
+<div class="header">
+    <div class="nav-container">
+        <div></div>
+        <%= button_to destroy_user_session_path, method: :delete, class: "log-out-a", data: { turbo: false } do %>
+            <h3>logout</h3>
+        <% end %>
+    </div>
+    <h1>Categories</h1>
+</div>
+
+<ul id="categories" class="categories-ul">
+    <% @categories.each do |category| %>
+        <a href="<%= category_exchanges_path(category) %>">
+            <div class="trans-total-container">
+                <div class="img-container">
+                    <img class="category-image" src="<%= category.icon %>" alt="<%= category.name %>_image">
+                </div>
+                <p class="trans-name"><%= category.name %></p>
+            </div>
+            <p class = "trans-amount">$<%= category.total_amount.inspect %></p>
+        </a>
+    <% end %>
+</ul>
+
+<a class="add-new-a" href="<%= new_category_path %>">
+    <button class='add-new'>Add a new Category</button>
+</a>

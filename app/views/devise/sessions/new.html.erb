@@ -1,0 +1,26 @@
+<div class="header">
+  <a class="back-btn-a" href="/">
+    <img class="back-btn" src="<%= asset_path('arrow_back.ico') %>" alt="Back" id="back-img">
+  </a>
+  <h2>Log in</h2>
+</div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-container" }) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "input-field" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password", class: "input-field" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me, class: "remember-me" %>
+      <%= f.label :remember_me,  class: "remember-me-label" %>
+    </div>
+  <% end %>
+
+  <div class="form-btn-container">
+    <%= f.submit "Log in", class: "form-btn" %>
+  </div>
+<% end %>
