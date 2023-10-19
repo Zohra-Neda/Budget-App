@@ -4,7 +4,7 @@
       <img class="back-btn"  src="<%= asset_path('arrow_back.ico') %>" alt="Back" id="back-img">
     </a>
     <%= button_to destroy_user_session_path, method: :delete, class: "log-out-a", data: { turbo: false } do %>
-      <h3 class="h3">logout</h3>
+      <h3>logout</h3>
     <% end %>
   </div>
   <h1>Transactions</h1>
